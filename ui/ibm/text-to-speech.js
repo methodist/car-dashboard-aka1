@@ -77,7 +77,8 @@ var TTSModule = (function() {
             }
             audio = WatsonSpeech.TextToSpeech.synthesize({
               text: payload.text, // Output text/response
-              voice: 'en-US_MichaelVoice', // Default Watson voice
+              // voice: 'en-US_MichaelVoice', // Default Watson voice
+              voice: "ja-JP_EmiVoice",
               autoPlay: true, // Automatically plays audio
               token: token
             });

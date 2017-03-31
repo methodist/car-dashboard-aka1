@@ -18,5 +18,6 @@ function start_music(type){
 
 function stop_music(){
     audioObj.pause();
+    audioObj = new Audio();
 }
 

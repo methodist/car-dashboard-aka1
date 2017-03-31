@@ -41,7 +41,7 @@ gulp.task('build-fonts', () =>
     .pipe(gulp.dest(appProd + 'fonts'))
 );
 
-gulp.task('build-html', [ 'build-img', 'build-css', 'build-ibm'], () => {
+gulp.task('build-html', [ 'build-img', 'build-audio', 'build-css', 'build-ibm'], () => {
   const assets = $.useref({ 'searchPath': ['ui/**/*.*', 'node_modules'] });
 
   return gulp.src(appDev + 'index.html')
@@ -57,6 +57,11 @@ gulp.task('build-img', () =>
     .pipe(gulp.dest(appProd + 'images/'))
 );
 
+gulp.task('build-audio', () =>
+  gulp.src(appDev + 'audio/**/*')
+    .pipe(gulp.dest(appProd + 'audio/'))
+);
+
 gulp.task('clean', () =>
   gulp.src(appProd, { read: false })
     .pipe($.clean())
@@ -67,6 +72,7 @@ gulp.task('watch', ['build-html'], () => {
   gulp.watch(appDev + 'css/*.css', ['build-html']);
   gulp.watch(appDev + '**/*.html', ['build-html']);
   gulp.watch(appDev + 'images/**/*', ['build-html']);
+  gulp.watch(appDev + 'audio/**/*', ['build-html']);
 });
 
 gulp.task('server:start', () =>

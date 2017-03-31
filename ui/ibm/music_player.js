@@ -1,22 +1,20 @@
+var audioObj = new Audio();
 
-function start_jazz_music(){
-    var audioObj = document.getElementById("jazzMusic");
+function start_music(type){
+    var url = "audio/Take_Five.wav";
+    if ( type == "jazz" ) {
+       url = "audio/Take_Five.wav";
+    }
+    if ( type == "rock" ) {
+       url = "audio/Hotel_California.wav";
+    }
+    
+    audioObj.pause();
+    audioObj = new Audio(url);
     audioObj.play();
 }
 
-function stop_jazz_music(){
-    var audioObj = document.getElementById("jazzMusic");
+function stop_music(){
     audioObj.pause();
 }
-
-function start_rock_music(){
-    var audioObj = document.getElementById("rockMusic");
-    audioObj.play();
-}
-
-function stop_rock_music(){
-    var audioObj = document.getElementById("rockMusic");
-    audioObj.pause();
-}
-
 

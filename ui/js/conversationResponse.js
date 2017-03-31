@@ -34,7 +34,7 @@ var ConversationResponse = (function () {
   function actionFunctions(action) {
     if(action.cmd === 'music_on') {
       Panel.playMusic(action.arg);
-      start_jazz_music();
+      start_music(action.arg);
     } else if(action.cmd === 'wipers_on') {// turn on commands
       Animations.wipersOn('lo');
     } else if(action.cmd === 'lights_on') {
@@ -47,7 +47,7 @@ var ConversationResponse = (function () {
       Panel.ac('lo');
     } else if(action.cmd === 'music_off') {//turn off commands
       Panel.setWatsonPanelToDefault();
-      stop_jazz_music();
+      stop_music();
     } else if(action.cmd === 'wipers_off') {
       Animations.wipersOff();
     } else if(action.cmd === 'lights_off') {

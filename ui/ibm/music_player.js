@@ -24,3 +24,5 @@ function stop_music(){
     audioObj = new Audio();
 }
 
+// comment by yanagih
+
